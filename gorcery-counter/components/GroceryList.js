@@ -1,12 +1,14 @@
 import React from 'react';
 
-const GroceryList = ({ groceries }) => {
+const GroceryList = ({ options, handleSelect }) => {
   return (
     <div>
       <h2>Grocery List</h2>
       <ul>
-        {groceries.map((grocery, index) => (
-          <li key={index}>{grocery}</li>
+        {options.map((item, index) => (
+          <li key={index}>
+            <button onClick={() => handleSelect(item)}>{item}</button>
+          </li>
         ))}
       </ul>
     </div>
